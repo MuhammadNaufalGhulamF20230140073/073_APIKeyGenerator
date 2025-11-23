@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Login</title>
 
     <!-- Bootstrap -->
@@ -13,42 +13,70 @@
 
     <style>
       body {
-        background: linear-gradient(135deg, #1a73e8, #4285f4);
+        margin: 0;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        background: linear-gradient(135deg, #0056d6, #3b8af0);
         font-family: "Poppins", sans-serif;
       }
 
-      .login-card {
-        width: 380px;
-        padding: 30px;
+      /* Tombol Home */
+      .btn-home {
+        position: absolute;
+        top: 18px;
+        left: 18px;
         background: white;
-        border-radius: 20px;
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-        animation: fadeIn 0.6s ease;
+        padding: 6px 13px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #0056d6;
+        text-decoration: none;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+        transition: 0.2s;
+      }
+
+      .btn-home:hover {
+        background: #e6e6e6;
+      }
+
+      /* Card Login */
+      .login-card {
+        width: 400px;
+        padding: 35px;
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+        animation: fadeIn 0.7s ease;
       }
 
       .login-card h3 {
         font-weight: 700;
-        text-align: center;
         margin-bottom: 25px;
-        color: #1a73e8;
+        color: #0056d6;
+        text-align: center;
       }
 
-      .btn-custom {
+      .btn-login {
+        background: #0056d6;
+        color: white;
         width: 100%;
         padding: 12px;
         border-radius: 12px;
-        font-weight: bold;
-        font-size: 16px;
+        font-weight: 600;
+        transition: 0.2s;
+      }
+
+      .btn-login:hover {
+        background: #003b92;
       }
 
       @keyframes fadeIn {
         from {
           opacity: 0;
-          transform: translateY(-20px);
+          transform: translateY(-15px);
         }
         to {
           opacity: 1;
@@ -59,13 +87,16 @@
   </head>
 
   <body>
+    <!-- Tombol Home -->
+    <a href="/index.html" class="btn-home">Home</a>
+
     <div class="login-card">
       <h3>Admin Login</h3>
 
       <div class="mb-3">
         <input
-          id="admin_username"
           type="text"
+          id="admin_username"
           class="form-control"
           placeholder="Username"
         />
@@ -73,22 +104,20 @@
 
       <div class="mb-3">
         <input
-          id="admin_password"
           type="password"
+          id="admin_password"
           class="form-control"
           placeholder="Password"
         />
       </div>
 
-      <button class="btn btn-primary btn-custom" onclick="loginAdmin()">
-        Login
-      </button>
+      <button class="btn-login" onclick="loginAdmin()">Login</button>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script -->
+    <!-- Admin Logic -->
     <script src="/admin/script.js"></script>
   </body>
 </html>

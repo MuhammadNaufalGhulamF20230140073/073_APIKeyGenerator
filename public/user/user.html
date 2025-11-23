@@ -22,6 +22,27 @@
         font-family: "Poppins", sans-serif;
       }
 
+      /* =============== Tombol Home =============== */
+      .btn-home {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        color: #6f42c1;
+        padding: 6px 14px;
+        border-radius: 15px;
+        font-size: 13px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+
+      .btn-home:hover {
+        background: #ffffff;
+        color: #5a32a3;
+      }
+      /* =========================================== */
+
       .login-card {
         width: 400px;
         background: rgba(255, 255, 255, 0.25);
@@ -85,6 +106,9 @@
   </head>
 
   <body>
+    <!-- 🔹 Tombol kecil ke halaman utama -->
+    <a href="/index.html" class="btn-home">Home</a>
+
     <div class="login-card">
       <h2>User Login</h2>
 

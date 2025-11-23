@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard User</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <h2>Dashboard User</h2>
+
+    <div class="card">
+        <p><strong>Firstname:</strong> <span id="u_firstname"></span></p>
+        <p><strong>Lastname:</strong> <span id="u_lastname"></span></p>
+        <p><strong>Email:</strong> <span id="u_email"></span></p>
+        <p><strong>Your API Key:</strong>
+            <span id="u_api_key" style="color: green; font-weight: bold;"></span>
+        </p>
+    </div>
+
+    <button onclick="logout()" class="btn">Logout</button>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "user.html";
+        }
+    </script>
+
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>

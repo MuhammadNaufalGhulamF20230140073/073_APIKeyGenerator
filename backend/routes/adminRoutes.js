@@ -3,7 +3,7 @@ const router = express.Router();
 const admin = require("../controllers/adminController");
 
 // LOGIN ADMIN
-router.post("/login", admin.adminLogin);
+router.post("/login", admin.loginAdmin);
 
 // CRUD USER
 router.get("/users", admin.getAllUsers);

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001/admin/login";
+const API_URL = "http://localhost:3001/api/admin/login";
 
 async function loginAdmin() {
   const username = document.getElementById("admin_username").value;
@@ -9,24 +9,29 @@ async function loginAdmin() {
     return;
   }
 
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username, password }),
-  });
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
 
-  const data = await res.json();
+    const data = await res.json();
 
-  if (!data.success) {
-    alert("Login gagal: " + data.message);
-    return;
+    if (!data.success) {
+      alert("Login gagal: " + data.message);
+      return;
+    }
+
+    alert("Login Berhasil!");
+
+    // Simpan token admin
+    localStorage.setItem("admin_token", data.token);
+
+    // Redirect ke dashboard admin
+    window.location.href = "/admin/dashboard";
+  } catch (err) {
+    console.error(err);
+    alert("Tidak dapat terhubung ke server!");
   }
-
-  alert("Login Berhasil!");
-
-  // Simpan token admin
-  localStorage.setItem("admin_token", data.token);
-
-  // Pindah ke dashboard admin
-  window.location.href = "dashboard.html";
 }

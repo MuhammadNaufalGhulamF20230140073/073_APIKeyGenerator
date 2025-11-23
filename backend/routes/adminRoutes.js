@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const admin = require("../controllers/adminController");
 
+// LOGIN ADMIN
+router.post("/login", admin.adminLogin);
+
 // CRUD USER
 router.get("/users", admin.getAllUsers);
 router.get("/user/:id", admin.getUserById);
